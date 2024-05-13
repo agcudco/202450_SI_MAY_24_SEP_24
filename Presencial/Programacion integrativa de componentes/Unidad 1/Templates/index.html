@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <template id="tmplFoto">
+        <div class="container">
+            <p>Imagen</p>
+            <img src="https://19604448.fs1.hubspotusercontent-na1.net/hubfs/19604448/JavaScript%20un%20lenguaje%20de%20programaci%C3%B3n.jpg" 
+                alt="JavaScript">
+        </div>
+    </template>
+
+    <div id="logo">
+
+    </div>
+
+    <div id="myDiv">
+        <h1>Hola desde el DIV</h1>
+    </div>
+    <template id="myTemplate">
+        <h1>Hola desde el template</h1>
+    </template>
+
+    <template id="tmplLista">
+        <li>
+            <span>Hola: </span>
+            <span></span>
+        </li>
+    </template>
+
+    <ul id="lista">
+
+    </ul>
+
+    <script>
+
+        //localizamos el elemento template
+        const template = document.querySelector('#myTemplate');
+        
+        //declaramos una nueva variable y clonamos el contenido del template
+        const templateClone = document.importNode(template.content,true);
+
+        //inyectamos el contenido del template en el documento
+        document.body.appendChild(templateClone);
+
+        const estudiantes = ["Juanito","Maria"];
+
+        const tmplLista = document.querySelector('#tmplLista');
+
+        estudiantes.forEach((nombre)=>{
+            const templateClone = document.importNode(tmplLista.content,true);
+            templateClone.querySelectorAll('span')[1].innerText = nombre;
+            lista.appendChild(templateClone);
+        });
+
+
+        const fotoTemplate = document.querySelector('#tmplFoto');
+        const logo = document.querySelector('#logo');
+        const txtLogo = fotoTemplate.content.cloneNode(true);
+        logo.appendChild(txtLogo);
+        
+    </script>
+</body>
+</html>
