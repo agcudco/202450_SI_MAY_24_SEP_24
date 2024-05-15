@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tmplPhoto{
+            background-color: bisque;           
+            border: 2px solid #ccc;
+        }
+
+        ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            color: chocolate;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div id="myPhoto">
+        <p>Aqui mi foto</p>
+    </div>
+
+    <template  id="tmplPhoto">
+        <div class="tmplPhoto">
+            <img src="https://mediaproxy.salon.com/width/1200/height/675/https://media2.salon.com/2014/07/marge_simpson.jpg" 
+            alt="Foto de Marge"
+            width="25%">
+        </div>
+    </template>
+
+    <template id="myTemplate">
+        <h1>Hola desde el template</h1>
+    </template>
+
+    <div id="myDiv">
+        <h1>Hola desde el Div</h1>
+    </div>
+
+    <ol id="list">
+
+    </ol>
+
+    <template id="tmplList">
+        <li>
+            <span>Estudiante: </span>
+            <span></span>
+        </li>
+    </template>
+
+    <script>
+        const template = document.querySelector('#myTemplate');
+                    
+        for(let i=0; i<2;i++){
+            const templateClone = document.importNode(template.content,true);
+            document.body.appendChild(templateClone);
+        }
+
+        const tmplFoto = document.querySelector('#tmplPhoto');
+        const foto = document.querySelector('#myPhoto');
+        const cloneTemplate = tmplFoto.content.cloneNode(true);
+        foto.appendChild(cloneTemplate);
+
+        const estudiantes = ["Juanito","El Kevin","Jaimito","Lulu","Merlyn"];
+        const templateLista = document.querySelector('#tmplList');
+        estudiantes.forEach((nombre)=>{
+            const cloneTemplate = document.importNode(templateLista.content,true);
+            cloneTemplate.querySelectorAll('span')[1].innerText = nombre;
+            list.appendChild(cloneTemplate);
+        });
+
+    </script>
+
+</body>
+</html>
