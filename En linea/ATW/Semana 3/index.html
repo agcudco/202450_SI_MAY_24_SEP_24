@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>    
+    <div class="form-container">
+        <form action="#" method="post">
+            <h2>Formulario de Registro</h2>            
+            <div class="form-group">
+                <label for="nombre">Nombre: </label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej. Angel" required >
+            </div>
+            <div class="form-group">
+                <label for="apellido">Apellido: </label>
+                <input type="text" id="apellido" name="apellido" placeholder="Ej. Cudco" required >
+            </div>
+
+            <div class="form-group">
+                <label for="direccion">Direccion domiciliaria:</label>
+                <textarea name="direccion" id="direccion" rows="4"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Correo electronico:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="passwd">Contraseña:</label>
+                <input type="password" name="passwd" id="passwd">
+            </div>
+
+            <div class="form-group">
+                <label for="genero">Genero: </label>
+                <div class="radio-group">
+                    <label for="masculino">Masculino:</label>
+                    <input type="radio"  id="masculino" name="masculino"  value="masculino">
+                    <label for="femenino">Femenino:</label>
+                    <input type="radio"  id="femenino" name="femenino"  value="femenino">
+                </div>
+                
+            </div>
+
+
+            <div class="form-group">
+                <label for="ciudades">Seleccione su ciudad</label>
+                <select name="ciudades" id="ciudades">
+                    <option value="Sangolqui">Sangolqui</option>
+                    <option value="Riobamba">Riobamba</option>
+                    <option value="Ambato">Ambato</option>
+                    <option value="Latacunga">Latacunga</option>
+                    <option value="Quito">Quito</option>
+                </select>
+            </div>
+
+            <button>Registrar</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100hv;
+    margin: 10px;
+}
+h1{
+    color: brown;
+}
+
+.container-lista{
+    background-color: bisque;
+    padding: 20px 40px;
+    border-radius: 10px;
+    width: 100%;
+    border-color: black;
+}
+
+ul,ol{    
+    padding: 2px;
+}
+
+ul li, ol li{
+    background-color: chartreuse;
+    color: white;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+ul li:hover, ol li:hover{
+    background-color: #0056b3;
+    cursor: pointer;
+}
