@@ -35,11 +35,11 @@ public class ProductServicesImpl implements ProductService {
 
 	@Override
 	public List<Producto> getAllProducts() {
-		  EntityManager em = emf.createEntityManager();
-	        TypedQuery<Producto> query = em.createQuery("SELECT e FROM Producto e", Producto.class);
-	        List<Producto> entities = query.getResultList();
-	        em.close();
-	        return entities;
+		EntityManager em = emf.createEntityManager();
+		TypedQuery<Producto> query = em.createQuery("SELECT e FROM Producto e", Producto.class);
+		List<Producto> entities = query.getResultList();
+		em.close();
+		return entities;
 	}
 
 }
