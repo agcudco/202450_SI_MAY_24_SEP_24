@@ -3,8 +3,11 @@ import fs from 'fs';
 import mysql from 'mysql2';
 import bodyParser from 'body-parser';
 
+import cors  from 'cors'; // Importar el middleware cors
+
 const app = express();
 
+app.use(cors());
 app.use(bodyParser.json());
 
 const db = mysql.createConnection({
@@ -61,7 +64,7 @@ app.get("/estudiantes",(req,res)=>{
     const query = "SELECT * FROM estudiante";
     db.query(query,(error,results)=>{
         if(error){
-            res.status(500).send('Error al recibir datos');
+            res.status(500).json('Error al recibir datos');
             return;
         }
         res.status(200).json(results);
@@ -73,9 +76,9 @@ app.post("/libros",(req,res)=>{
     const query = "INSERT INTO libro(titulo, autor, editorial, nropaginas, stock, estado) VALUES(?,?,?,?,?,?)";
     db.query(query,[titulo, autor, editorial, nropaginas, stock, estado],(error,results)=>{
         if(error){
-            res.status(500).send('Error al registar el libro');
+            res.status(500).json('Error al registar el libro');
             return;
         }
-        res.status(200).send(`Libro registrado con el ID: ${results.insertId}`);
+        res.status(200).json(`Libro registrado con el ID: ${results.insertId}`);
     });
 });
