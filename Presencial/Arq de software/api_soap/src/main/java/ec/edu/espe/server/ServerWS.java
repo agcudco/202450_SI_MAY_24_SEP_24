@@ -1,6 +1,6 @@
 package ec.edu.espe.server;
 
-import ec.edu.espe.webservices.ProductoServices;
+
 import ec.edu.espe.webservices.impl.CategoriaServiceImpl;
 import ec.edu.espe.webservices.impl.ProductServicesImpl;
 import jakarta.xml.ws.Endpoint;

@@ -1,0 +1,33 @@
+body{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+#entradas{
+    margin-bottom: 20px;
+}
+
+.entrada{
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.entrada h3{
+    margin: 0;
+    font-size: 18px;
+    color: brown;
+}
+
+.entrada p{
+    margin-top: 5px;
+    color: #4caf50;
+}
+button{
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

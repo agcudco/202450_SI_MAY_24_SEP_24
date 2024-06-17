@@ -1,0 +1,43 @@
+.contenedor-carrusel{
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.carrusel{
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carrusel img {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carrusel img:first-child{
+    display: block;
+}
+
+.btnAnterior,
+.btnSiguiente{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    background-color: #ccc;
+    border: none;
+    cursor: pointer;
+}
+
+.btnAnterior{
+    left: 0;
+}
+
+.btnSiguiente{
+    right: 0;
+}
+

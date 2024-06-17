@@ -1,0 +1,39 @@
+version: "3.9"
+services:
+  java_app:
+    container_name: java_app
+    image: nrc16509-api_rest:1.0.0
+    build: .
+    ports:
+      - 8090:8090
+    environment:
+      - DATABASE_URL=jdbc:postgresql://java_db:5432/bd-test
+      - DATABASE_USERNAME=postgres
+      - DATABASE_PASSWORD=postgres
+    depends_on:
+      - java_db
+  java_db:
+    container_name: java_db
+    image: postgres:16
+    volumes:
+      - type: bind
+        source: D:\postgres_data
+        target: /var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: bd-test      
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - 8080:80
+    depends_on:
+      - java_db      
+volumes:
+  db_data:

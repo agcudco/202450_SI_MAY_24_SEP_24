@@ -1,0 +1,12 @@
+spring.application.name=api-rest
+
+#CONFIGURACION DEL DATASOURCE
+spring.datasource.url=jdbc:postgresql://localhost:5432/bd-test
+spring.datasource.username=postgres
+spring.datasource.password=123456
+
+#CONFIGURACION DE JPA
+spring.jpa.database-plataform=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.hibernate.ddl-auto=update
+#spring.jpa.hibernate.ddl-auto=create-drop
+spring.jpa.show-sql=true
