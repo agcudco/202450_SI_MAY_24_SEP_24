@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Stencil Component Starter</title>
+
+  <script type="module" src="/build/wc-component01.esm.js"></script>
+  <script nomodule src="/build/wc-component01.js"></script>
+</head>
+
+<body>
+
+  <custom-button>Hola</custom-button>
+  <br>
+  <mi-saludo name="Juanito Perez" edad="30"></mi-saludo>
+  <br>
+  <wc-suma></wc-suma>
+
+  <br><br>
+  <wc-tabla></wc-tabla>
+
+
+  <script>
+    const dataTable = document.querySelector('wc-tabla');
+    dataTable.data = {
+      headers: ['Nombre', 'Edad', 'Ciudad','Cargo'],
+      rows: [
+        ['Angel Cudco', 50, 'Sangolqui','Gerente'],
+        ['Juanito Perez', 60, 'Quito','Recepcionista'],
+        ['Icela Creyo', 30, 'Ambato','Asistente']
+      ]
+    }
+  </script>
+
+</body>
+
+</html>

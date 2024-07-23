@@ -1,0 +1,5 @@
+package espe.pac.pac.service.impl;
+
+public class BookServiceImpl {
+
+}
