@@ -1,0 +1,8 @@
+package espe.pac.pac.service;
+
+import espe.pac.pac.model.Book;
+
+public interface BookService {
+
+	public Book saveBook(Book book);
+}

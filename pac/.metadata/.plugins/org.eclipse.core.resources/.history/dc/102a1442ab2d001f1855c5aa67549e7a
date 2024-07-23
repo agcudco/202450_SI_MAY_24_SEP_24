@@ -1,0 +1,7 @@
+package espe.pac.pac.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface BookRepository extends JpaRepository<Book, ID>{
+	
+}

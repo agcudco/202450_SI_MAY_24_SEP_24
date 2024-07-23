@@ -1,0 +1,61 @@
+package espe.pac.pac.model;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "libro")
+public class Book {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	@Column(name = "nombre",length = 50, nullable = false)
+	private String name;
+	
+	private String isbn;
+	
+	private String autor;
+	
+	@Column(name = "edicion")
+	private String edition;
+	
+	@Column(name = "anio")
+	private int year;
+
+	/**
+	 * 
+	 */
+	public Book() {
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @param id
+	 * @param name
+	 * @param isbn
+	 * @param autor
+	 * @param edition
+	 * @param year
+	 */
+	public Book(Long id, String name, String isbn, String autor, String edition, int year) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.isbn = isbn;
+		this.autor = autor;
+		this.edition = edition;
+		this.year = year;
+	}
+	
+	
+	
+	
+	
+	
+}
