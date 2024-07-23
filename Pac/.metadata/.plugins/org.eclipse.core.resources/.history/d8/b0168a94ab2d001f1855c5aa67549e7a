@@ -1,6 +1,0 @@
-package espe.pac.pac.service;
-
-public interface BookService {
-
-	
-}
