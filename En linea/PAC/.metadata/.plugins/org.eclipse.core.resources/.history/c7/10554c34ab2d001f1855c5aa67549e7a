@@ -1,5 +1,0 @@
-package espe.pac.pac.repository;
-
-public interface BookRepository {
-
-}
